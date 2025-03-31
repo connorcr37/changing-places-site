@@ -1,89 +1,114 @@
+<!-- TODO: 
+ 
+"I'm pretty tired. I think I'll go home now." - Forrest Gump
+    
+- Backend. Netlify Forms, Google Forms proxy, Formspree, PHP/Node...?
+- Google reCAPTCHA v2 (checkbox) or v3 (invisible background version)?
+- Remember best practices.
+    - Limit file size on the backend (2–10MB per image)
+    - Validate file type on both front + back end (jpg, png, etc.)
+    - Sanitize filenames before saving
+    - Set Content-Disposition headers properly if you serve them later
+- Form feedback.. probably need a success message and error handling.. scroll to top or form reset?
+- Add autocomplete attributes
+- Disable submit button until required fields are filled (optional)
+
+- Testing
+    - test uploads on desktop and mobile
+    - check fallback for unsupported file types,
+    - test browser validation (leaving required fields empty, use bad email formats, etc.)
+    - see what happens with JavaScript disabled.
+
+- Annotate so you remember what you were thinking later
+- General clean up
+
+-->
+                    
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Consign Your Items | Changing Places</title>
-  <meta name="description" content="Use this form to submit items for consignment with Changing Places in Urbandale, IA.">
-  <link rel="canonical" href="https://shopchangingplaces.com/form.html" />
+    <title>Consign Your Items | Changing Places</title>
+    <meta name="description" content="Use this form to submit items for consignment with Changing Places in Urbandale, IA.">
+    <link rel="canonical" href="https://shopchangingplaces.com/form.html" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="subpage">
-  <header>
-    <div class="container header-flex">
-      <img src="images/logo.png" alt="Changing Places Logo" class="logo-img" loading="lazy">
-      <nav>
-        <ul>
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="index.html#consign">Consign Info</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <div class="container header-flex">
+            <img src="images/logo.png" alt="Changing Places Logo" class="logo-img" loading="lazy">
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#consign">Consign Info</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <main>
-    <section class="consign">
-      <div class="container">
-        <h3>Tell Us About Your Items</h3>
-        <p>Ready to consign? Use the form below to give us a bit of info and upload some photos. We'll get back to you as soon as we can!</p>
+    <main>
+        <section class="consign">
+            <div class="container">
+                <h3>Tell Us About Your Items</h3>
+                <p>Ready to consign? Use the form below to give us a bit of info and upload some photos. We'll get back
+                    to you as soon as we can!</p>
 
-        <form action="YOUR_BACKEND_ENDPOINT" method="POST" enctype="multipart/form-data">
-          <label for="name">Your Full Name *</label>
-          <input type="text" id="name" name="name" required>
+                <form action="YOUR_BACKEND_ENDPOINT" method="POST" enctype="multipart/form-data">
+                    <label for="name">Your Full Name *</label>
+                    <input type="text" id="name" name="name" required>
 
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" required>
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
 
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" autocomplete="email">
 
-          <label for="contact-method">Preferred Contact Method</label>
-          <select id="contact-method" name="contact-method">
-            <option value="" selected>No preference</option>
-            <option value="text">Text</option>
-            <option value="email">Email</option>
-          </select>
+                    <label for="contact-method">Preferred Contact Method</label>
+                    <select id="contact-method" name="contact-method">
+                        <option value="" selected>No preference</option>
+                        <option value="text">Text</option>
+                        <option value="email">Email</option>
+                    </select>
 
-          <label for="description">Tell Us About Your Items *</label>
-          <textarea id="description" name="description" rows="10" required placeholder="What are you hoping to consign? Feel free to include anything you know about the item - like condition, brand, size, or what you paid.
+                    <label for="description">Tell Us About Your Items *</label>
+                    <textarea id="description" name="description" rows="10" required placeholder="What are you hoping to consign? Feel free to include anything you know about the item - like condition, brand, size, or what you paid.
 
 - West Elm armchair, excellent condition, 4 years old, originally $1200.
 - Pottery Barn canvas wall art, good condition, 2 years old, originally $250, 24W x 36H.
 - Target floor lamp, like new, 1 month old, originally $80."></textarea>
-        <!-- fix the text area so it can't be resized-->
-          
 
-          <label for="photos">Upload Photos</label>
-          <input type="file" id="photos" name="photos[]" accept="image/*" multiple>
+                    <label for="photos">Upload Photos</label>
+                    <input type="file" id="photos" name="photos[]" accept="image/*" multiple>
 
-          <label>
-            <input type="checkbox" name="agreement" required>
-            I understand that items must be clean, damage-free, and in good condition.
-          </label>
+                    <label>
+                        <input type="checkbox" name="agreement" required>
+                        I understand that items must be clean, damage-free, and in good condition.
+                    </label>
+                    <button type="submit">Submit</button>
+                </form>
 
-          <!-- reCAPTCHA goes here later -->
+                <p class="note" style="margin-top: 1.25rem;">
+                    📸 Tip: If the upload doesn't work, feel free to email your photos to <a
+                        href="mailto:jen@shopchangingplaces.com">jen@shopchangingplaces.com</a> instead.
+                </p>
+            </div>
+        </section>
+    </main>
 
-          <button type="submit">Submit</button>
-        </form>
-
-        <p class="note" style="margin-top: 1.25rem;">
-          📸 Tip: If the upload doesn't work, feel free to email your photos to <a href="mailto:jen@shopchangingplaces.com">jen@shopchangingplaces.com</a> instead.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Changing Places. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Changing Places. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

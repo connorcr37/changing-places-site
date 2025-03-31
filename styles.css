@@ -1,8 +1,5 @@
 /* Follows a roughly SMACSS/BEM-lite mindset */
-
-
-
-/* ========== Base Reset ========== */
+/* ========== Base / Reset ========== */
 html {
   scroll-behavior: smooth;
 }
@@ -20,19 +17,18 @@ body {
   line-height: 1.6;
 }
 
-/* ========== Layout Containers ========== */
+/* ========== Layout ========== */
 .container {
   max-width: 68.75rem;
   margin: 0 auto;
   padding: 2rem;
 }
 
-/* ========== Header ========== */
+/* ========== Header & Logo ========== */
 header {
-  background-color: #ffffff;
+  background-color: #fff;
   border-bottom: 1px solid #ddd;
   height: 5rem;
-  overflow: visible;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -71,7 +67,6 @@ nav a {
   text-decoration: none;
   color: #2b2b2b;
   font-weight: 500;
-  font-family: 'Poppins', sans-serif;
 }
 
 nav a.button {
@@ -102,7 +97,7 @@ nav a.active {
   z-index: 30;
 }
 
-/* ========== Hero Banner ========== */
+/* ========== Hero ========== */
 .hero {
   background-image: url('images/banner.png');
   background-size: cover;
@@ -134,7 +129,7 @@ nav a.active {
   letter-spacing: 0.3px;
 }
 
-/* ========== Typography & Notes ========== */
+/* ========== Text / Notes / Typography ========== */
 .note {
   margin-top: 1rem;
   font-style: italic;
@@ -155,8 +150,8 @@ ol {
   letter-spacing: 0.3px;
 }
 
-.consign p+p,
-.about p+p {
+.consign p + p,
+.about p + p {
   margin-top: 0.75rem;
 }
 
@@ -167,6 +162,10 @@ ol {
 .portal-link {
   font-weight: bold;
   color: #2e5c50;
+  text-decoration: none;
+}
+
+.portal-link:hover {
   text-decoration: underline;
 }
 
@@ -201,12 +200,10 @@ ol {
   padding: 1rem 1.5rem;
   border-left: 0.3125rem solid #2e5c50;
   margin: 1.5rem 0;
-  font-family: 'Poppins', sans-serif;
 }
 
 /* ========== FAQ Accordion ========== */
 .faq-question {
-  font-family: 'Poppins', sans-serif;
   background: #f1f1f1;
   color: #2b2b2b;
   font-size: 1rem;
@@ -226,11 +223,11 @@ ol {
   background: #fafafa;
 }
 
-.faq-question.active+.faq-answer {
+.faq-question.active + .faq-answer {
   display: block;
 }
 
-/* ========== Form Styling ========== */
+/* ========== Forms ========== */
 form {
   display: flex;
   flex-direction: column;
@@ -240,8 +237,8 @@ form {
 
 form label {
   font-weight: 500;
-  margin-bottom: -1rem; /* or even 0.05rem for ultra-tight */
-  display: inline-block; /* ensures margin is respected */
+  margin-bottom: 0.1rem;
+  display: inline-block;
 }
 
 form input,
@@ -293,7 +290,7 @@ footer a {
   text-decoration: none;
 }
 
-/* ========== Background Patterns ========== */
+/* ========== Backgrounds ========== */
 .about,
 .faq {
   background-image: url('images/pattern-background-10.png');
@@ -303,7 +300,7 @@ footer a {
   background-size: contain;
 }
 
-/* ========== Responsive Styles ========== */
+/* ========== Responsive / Media Queries ========== */
 @media (max-width: 48rem) {
   .menu-toggle {
     display: block;
@@ -344,8 +341,7 @@ footer a {
   }
 }
 
-/* ========== Subpage Styles ========== */
-
+/* ========== Subpage Variants ========== */
 .subpage .logo-img {
   max-height: 5.5rem;
   width: auto;

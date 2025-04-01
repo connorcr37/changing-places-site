@@ -347,9 +347,9 @@ footer a {
 
   .logo-img {
     position: relative;
-    top: -0.5rem;
+    top: -.2rem;
     transform: none;
-    margin-bottom: 1rem;
+    margin-bottom: .7rem;
     height: 8.75rem;
     width: 8.75rem;
   }

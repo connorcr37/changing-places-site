@@ -17,6 +17,19 @@ body {
   line-height: 1.6;
 }
 
+/* ========== Typography & Utilities ========== */
+.note {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+ol {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
 /* ========== Layout ========== */
 .container {
   max-width: 68.75rem;
@@ -127,19 +140,6 @@ nav a.active {
   color: #333;
   font-weight: 600;
   letter-spacing: 0.3px;
-}
-
-/* ========== Text / Notes / Typography ========== */
-.note {
-  margin-top: 1rem;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-ol {
-  margin: 1rem 0;
-  padding-left: 1.2rem;
 }
 
 .consign h4 {
@@ -298,6 +298,37 @@ footer a {
   background-attachment: fixed;
   background-position: center;
   background-size: contain;
+}
+
+/* ========== Tooltip Shenanigans ========== */
+.tooltip {
+  position: relative;
+  cursor: help;
+  font-weight: inherit;
+  color: inherit;
+  border-bottom: none;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000000;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
 }
 
 /* ========== Responsive / Media Queries ========== */

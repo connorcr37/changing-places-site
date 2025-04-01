@@ -292,7 +292,8 @@ footer a {
 
 /* ========== Backgrounds ========== */
 .about,
-.faq {
+.faq,
+.preview {
   background-image: url('images/pattern-background-10.png');
   background-repeat: repeat;
   background-attachment: fixed;

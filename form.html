@@ -45,7 +45,8 @@
     <header>
         <div class="container header-flex">
             <img src="images/logo.png" alt="Changing Places Logo" class="logo-img" loading="lazy">
-            <nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
+            <nav id="mobile-menu">
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#consign">Consign Info</a></li>
@@ -96,7 +97,7 @@
                     <button type="submit">Submit</button>
                 </form>
                 <p class="note" style="margin-top: 1.25rem;"> 📸 Tip: If the upload doesn't work, feel free to <a href="sms:5157778992" class="portal-link">text</a> or
-                    <a href="mailto:jen@shopchangingplaces.com" class="portal-link">email</a> us your info - and let Corey know his form <span class="tooltip" data-tooltip='"I debugged it with good vibes. Stop clicking so hard!"'>betrayed you</span>.
+                    <a href="mailto:jen@shopchangingplaces.com" class="portal-link">email</a> us your info - and let Corey know his form <span class="tooltip" data-tooltip='"Stop clicking so hard!"'>betrayed you</span>.
                 </p>
             </div>
         </section>
@@ -107,6 +108,16 @@
             <p>&copy; 2025 Changing Places. All rights reserved.</p>
         </div>
     </footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('#mobile-menu ul');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+</script>
+
 </body>
 
 </html>

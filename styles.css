@@ -215,8 +215,9 @@ nav a.active {
 .faq-question {
   background: #f1f1f1;
   color: #2b2b2b;
+  font-family: 'Poppins', sans-serif; /* Locking it down explicitly since it keeps falling back unexpectedly */
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.3px;
   padding: 0.75rem 1rem;
   width: 100%;
@@ -299,6 +300,14 @@ footer a {
   text-decoration: none;
 }
 
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+  filter: grayscale(100%) brightness(0);
+}
+
 /* ========== Backgrounds ========== */
 .about,
 .faq,
@@ -371,7 +380,7 @@ footer a {
   }
 
   .logo-img.logo-scrolled {
-    top: -.2rem; /* prevent scroll animation from applying */
+    top: -.2rem; /* Preventing scroll animation from applying */
   }
 
   @keyframes slideFadeIn {
@@ -397,11 +406,6 @@ footer a {
 
   nav#mobile-menu ul.show {
     display: flex;
-  }
-
-  .consign a {
-    word-break: break-word;
-    overflow-wrap: break-word;
   }
 
   footer ul {

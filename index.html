@@ -1,5 +1,4 @@
-<!-- TODO: Make a better favicon -->
-<!-- TODO: Update staff titles (e.g., "Founder", "Furniture Curator", etc.) and make the images more responsive -->
+<!-- TODO: Link wrapping still sucks -->
 <!-- TODO: Make alt text more descriptive (e.g., "Portrait of Jen, owner of Changing Places, smiling in a black shirt") -->
 
 <!DOCTYPE html>
@@ -123,12 +122,15 @@
     }
   </script>
 
-  <!-- Title, Fonts, Styles, and Favicon -->
+  <!-- Title, Fonts, Styles, and Favicon (favicon.io) -->
   <title>Changing Places Consignment Shop</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
 </head>
 
 <body>
@@ -162,6 +164,7 @@
     <section id="gallery" class="preview">
       <div class="container">
         <h3>Recent Highlights</h3>
+        <!-- ⚠️ The console warning about defineLocale being deprecated comes from this embed using momnet.js under the hood. Nothing for you to address unless it breaks. ⚠️ -->
         <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
         <iframe src="//lightwidget.com/widgets/acaddb40c65e5f9a9041ed6dc27938c6.html" scrolling="no"
           allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"
@@ -181,8 +184,7 @@
             href="sms:5157778992" class="portal-link">515-777-8992</a>, email us at <a
             href="mailto:jen@shopchangingplaces.com" class="portal-link">jen@shopchangingplaces.com</a>, or
           use the form below. We'll review your items, let you know what we can accept, and schedule a drop-off during
-          store
-          hours. Please make sure all items are clean, in good condition, and free of stains, pet hair, or damage.</p>
+          store hours. Please make sure all items are clean, in good condition, free of stains, pet hair, and damage, and come from smoke-free environments.</p>
 
         <h4>Terms & Payouts</h4>
         <p>Consigned items are displayed in our store for up to four months. For items priced over $60, we apply a 15%
@@ -356,7 +358,6 @@
       <p>&copy; 2025 Changing Places Consignment Shop. All rights reserved.</p>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="https://changingplaces.consignoraccess.com/login">Consignor Portal</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
           <a href="https://www.facebook.com/ChangingPlacesDSM" target="_blank" rel="noopener" aria-label="Facebook">
@@ -378,6 +379,15 @@
             Instagram
           </a>
         </li>
+        <li>
+          <a href="https://changingplaces.consignoraccess.com/login" target="_blank" rel="noopener" aria-label="Consignor Portal">
+            <img src="images/simpleconsign-logo.png" alt="SimpleConsign Logo" class="footer-icon">
+
+            Consignor Portal
+          </a>
+        </li>
+        
+                
       </ul>
     </div>
   </footer>

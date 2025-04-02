@@ -67,6 +67,12 @@ header {
   transform: translateY(-50%);
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   z-index: 20;
+  transition: top 0.4s ease;
+}
+
+.logo-img.logo-scrolled {
+  top: 14%;
+  transition: top 0.4s ease;
 }
 
 /* ========== Navigation ========== */
@@ -150,8 +156,8 @@ nav a.active {
   letter-spacing: 0.3px;
 }
 
-.consign p + p,
-.about p + p {
+.consign p+p,
+.about p+p {
   margin-top: 0.75rem;
 }
 
@@ -223,7 +229,7 @@ nav a.active {
   background: #fafafa;
 }
 
-.faq-question.active + .faq-answer {
+.faq-question.active+.faq-answer {
   display: block;
 }
 
@@ -371,15 +377,24 @@ footer a {
   nav#mobile-menu ul.show {
     display: flex;
   }
-}
 
-/* ========== Subpage Variants ========== */
-.subpage .logo-img {
-  max-height: 5.5rem;
-  width: auto;
-}
+  .logo-img.logo-scrolled {
+    top: -.2rem;
+    /* override scroll position */
+  }
 
-.subpage .header-flex {
-  padding-left: 2rem;
-  height: 4.5rem;
+  /* Slide + Fade */
+  .logo-img {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    animation: slideFadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes slideFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 }

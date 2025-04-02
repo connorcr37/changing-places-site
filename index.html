@@ -420,6 +420,27 @@
         answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
       });
     });
+
+    // Logo Scroll Animation
+    const logo = document.querySelector('.logo-img');
+
+    function handleLogoScroll() {
+      // Only apply scroll behavior on screens wider than 768px
+      if (window.innerWidth > 768) {
+        if (window.scrollY > 80) {
+          logo.classList.add('logo-scrolled');
+        } else {
+          logo.classList.remove('logo-scrolled');
+        }
+      } else {
+        // Ensure it's in its default mobile state
+        logo.classList.remove('logo-scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleLogoScroll);
+    window.addEventListener('resize', handleLogoScroll); // update on resize too
+    window.addEventListener('load', handleLogoScroll); // make sure it’s right on page load
   </script>
 </body>
 

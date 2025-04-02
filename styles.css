@@ -1,4 +1,7 @@
 /* Follows a roughly SMACSS/BEM-lite mindset */
+
+
+
 /* ========== Base / Reset ========== */
 html {
   scroll-behavior: smooth;
@@ -116,7 +119,7 @@ nav a.active {
   z-index: 30;
 }
 
-/* ========== Hero ========== */
+/* ========== Hero Section ========== */
 .hero {
   background-image: url('images/banner.png');
   background-size: cover;
@@ -338,7 +341,9 @@ footer a {
   opacity: 1;
 }
 
-/* ========== Responsive / Media Queries ========== */
+
+
+/* ========== Responsive / Mobile Adjustments ========== */
 @media (max-width: 48rem) {
   .menu-toggle {
     display: block;
@@ -355,9 +360,25 @@ footer a {
     position: relative;
     top: -.2rem;
     transform: none;
-    margin-bottom: .7rem;
+    margin-bottom: 0.7rem;
     height: 8.75rem;
     width: 8.75rem;
+
+    /* Fade + slide on load (mobile only) */
+    opacity: 0;
+    transform: translateY(0.75rem);
+    animation: slideFadeIn 0.8s ease-out forwards;
+  }
+
+  .logo-img.logo-scrolled {
+    top: -.2rem; /* prevent scroll animation from applying */
+  }
+
+  @keyframes slideFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   nav#mobile-menu ul {
@@ -378,23 +399,14 @@ footer a {
     display: flex;
   }
 
-  .logo-img.logo-scrolled {
-    top: -.2rem;
-    /* override scroll position */
+  .consign a {
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
-  /* Slide + Fade */
-  .logo-img {
-    opacity: 0;
-    transform: translateY(0.75rem);
-    animation: slideFadeIn 0.8s ease-out forwards;
+  footer ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
   }
-
-  @keyframes slideFadeIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
 }

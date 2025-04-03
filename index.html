@@ -136,9 +136,12 @@
 <body>
   <header>
     <div class="container header-flex">
-      <a href="#home" aria-label="Go to top"><img src="images/logo.png" alt="Changing Places Logo" class="logo-img" loading="lazy"></a>
+      <a href="#home" aria-label="Go to top"><img src="images/logo.png" alt="Changing Places Logo" class="logo-img"
+          loading="lazy"></a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
       <nav id="mobile-menu">
+        <!-- Menu Links: 5 items is a sweet spot for mobile and desktop readability. Testimonials and FAQs are just supportive content. 
+         Current menu leads people through a journey: discover (Gallery), get involved (Consign), learn (About), and reach out (Contact). -->
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#gallery">Gallery</a></li>
@@ -184,7 +187,8 @@
             href="sms:5157778992" class="portal-link">515-777-8992</a>, email us at <a
             href="mailto:jen@shopchangingplaces.com" class="portal-link">jen@shopchangingplaces.com</a>, or
           use the form below. We'll review your items, let you know what we can accept, and schedule a drop-off during
-          store hours. Please make sure all items are clean, in good condition, free of stains, pet hair, and damage, and come from smoke-free environments.</p>
+          store hours. Please make sure all items are clean, in good condition, free of stains, pet hair, and damage,
+          and come from smoke-free environments.</p>
 
         <h4>Terms & Payouts</h4>
         <p>Consigned items are displayed in our store for up to four months. For items priced over $60, we apply a 15%
@@ -287,7 +291,8 @@
         <div class="faq-item">
           <button class="faq-question">What types of items do you accept?</button>
           <div class="faq-answer">
-            <p>We accept furniture, rugs, mirrors, wall art, and home decor. At the moment, we aren't taking armoires due to
+            <p>We accept furniture, rugs, mirrors, wall art, and home decor. At the moment, we aren't taking armoires
+              due to
               low demand.</p>
           </div>
         </div>
@@ -295,21 +300,24 @@
           <button class="faq-question">Do you accept walk-in consignments?</button>
           <div class="faq-answer">
             <p>To help keep things running smoothly, we ask that you send photos first. We often have other consignors
-              already scheduled, and we can only accommodate a certain number of items each day - sending photos ahead lets
+              already scheduled, and we can only accommodate a certain number of items each day - sending photos ahead
+              lets
               us plan accordingly and saves you a trip!</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">How much will you list my item for?</button>
           <div class="faq-answer">
-            <p>We base pricing on a mix of factors - brand, condition, style, and current trends. Since condition plays such
+            <p>We base pricing on a mix of factors - brand, condition, style, and current trends. Since condition plays
+              such
               a big role, we only price items after seeing them in person.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">How do I get paid?</button>
           <div class="faq-answer">
-            <p>Payouts are processed on the 5th of the month after your item sells. Payments under $100 are made in cash,
+            <p>Payouts are processed on the 5th of the month after your item sells. Payments under $100 are made in
+              cash,
               and anything over $100 is paid by check. All payouts are picked up in-store - just swing by when it's
               convenient!</p>
           </div>
@@ -317,14 +325,16 @@
         <div class="faq-item">
           <button class="faq-question">Do you offer pickup outside the 20-mile radius?</button>
           <div class="faq-answer">
-            <p>We do! If you're located further out, we're happy to recommend a trusted third-party mover. Just let us know
+            <p>We do! If you're located further out, we're happy to recommend a trusted third-party mover. Just let us
+              know
               and we'll point you in the right direction.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">I'm looking for a specific item. Can you let me know when one comes in?</button>
           <div class="faq-answer">
-            <p>With over 6,000 consignors and about 100 new items arriving every day, our inventory moves incredibly fast —
+            <p>With over 6,000 consignors and about 100 new items arriving every day, our inventory moves incredibly
+              fast —
               it's just not something we're able to track or give updates on individually. We totally understand the
               treasure hunt though! The best way to stay in the loop is by following us on <a
                 href="https://www.facebook.com/ChangingPlacesDSM" class="portal-link" target="_blank">Facebook</a> and
@@ -380,14 +390,12 @@
           </a>
         </li>
         <li>
-          <a href="https://changingplaces.consignoraccess.com/login" target="_blank" rel="noopener" aria-label="Consignor Portal">
+          <a href="https://changingplaces.consignoraccess.com/login" target="_blank" rel="noopener"
+            aria-label="Consignor Portal">
             <img src="images/simpleconsign-logo.png" alt="SimpleConsign Logo" class="footer-icon">
-
             Consignor Portal
           </a>
         </li>
-        
-                
       </ul>
     </div>
   </footer>
@@ -399,6 +407,15 @@
 
     toggle.addEventListener('click', () => {
       menu.classList.toggle('show');
+    });
+
+    // Close the mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (menu.classList.contains('show')) {
+          menu.classList.remove('show');
+        }
+      });
     });
 
     // Scroll-Based Navigation Highlight
@@ -413,6 +430,11 @@
           current = section.getAttribute('id');
         }
       });
+
+      // If user is at the bottom of the page, override current to 'contact'
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+        current = 'contact';
+      }
 
       navLinks.forEach(link => {
         link.classList.remove('active');

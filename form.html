@@ -77,19 +77,12 @@
           </p>
 
           <form
-            action="https://formsubmit.co/jen@shopchangingplaces.com"
+            action="send-consign.php"
             method="POST"
             enctype="multipart/form-data"
             data-consign-form
           >
-            <input
-              type="hidden"
-              name="_subject"
-              value="New consignment submission"
-            />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-
+            
             <label for="name">Your Full Name *</label>
             <input
               type="text"
@@ -275,6 +268,12 @@
       const formStatus = document.querySelector("[data-form-status]");
 
       if (consignForm && formStatus) {
+        const hasFetchSupport = typeof window.fetch === "function";
+
+        if (!hasFetchSupport) {
+          return;
+        }
+
         const submitButton = consignForm.querySelector('button[type="submit"]');
 
         consignForm.addEventListener("submit", async (event) => {
@@ -301,17 +300,27 @@
               },
             });
 
-            if (!response.ok) {
-              throw new Error("Submission failed");
+            const data = await response.json().catch(() => null);
+
+            const didSucceed =
+              data && (data.success === "true" || data.success === true);
+
+            if (!response.ok || !didSucceed) {
+              throw new Error(
+                (data && data.message) || "Submission failed"
+              );
             }
 
             consignForm.reset();
             formStatus.textContent =
+              (data && data.message) ||
               "Thanks! We have your details and will be in touch soon.";
             formStatus.classList.add("form-status--success");
           } catch (error) {
             formStatus.textContent =
-              "Something went wrong. Please try again or contact us directly.";
+              (error instanceof Error && error.message)
+                ? error.message
+                : "Something went wrong. Please try again or contact us directly.";
             formStatus.classList.add("form-status--error");
           } finally {
             submitButton.disabled = false;

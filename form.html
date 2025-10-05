@@ -276,6 +276,15 @@
 
       if (consignForm && formStatus) {
         const submitButton = consignForm.querySelector('button[type="submit"]');
+        let ajaxEndpoint = consignForm.action;
+
+        try {
+          const actionUrl = new URL(consignForm.action);
+          actionUrl.pathname = `/ajax${actionUrl.pathname}`;
+          ajaxEndpoint = actionUrl.toString();
+        } catch (error) {
+          // Ignore URL parsing issues; fall back to the original action.
+        }
 
         consignForm.addEventListener("submit", async (event) => {
           event.preventDefault();
@@ -293,7 +302,7 @@
           submitButton.disabled = true;
 
           try {
-            const response = await fetch(consignForm.action, {
+            const response = await fetch(ajaxEndpoint, {
               method: consignForm.method,
               body: new FormData(consignForm),
               headers: {

@@ -1,479 +1,707 @@
-<!-- TODO: Link wrapping still sucks -->
-<!-- TODO: Make alt text more descriptive (e.g., "Portrait of Jen, owner of Changing Places, smiling in a black shirt") -->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta -->
+    <meta
+      name="description"
+      content="Changing Places is a furniture consignment store in Urbandale, IA offering curated, gently used home furnishings with style and character."
+    />
+    <meta
+      name="keywords"
+      content="furniture consignment, used furniture, sell furniture, home decor, Des Moines, Urbandale, secondhand furniture, interior design, resale shop, sustainable shopping"
+    />
+    <meta name="author" content="Changing Places Consignment Shop" />
+    <link rel="canonical" href="https://shopchangingplaces.com" />
 
-  <!-- SEO Meta -->
-  <meta name="description"
-    content="Changing Places is a furniture consignment store in Urbandale, IA offering curated, gently used home furnishings with style and character.">
-  <meta name="keywords"
-    content="furniture consignment, used furniture, sell furniture, home decor, Des Moines, Urbandale, secondhand furniture, interior design, resale shop, sustainable shopping">
-  <meta name="author" content="Changing Places Consignment Shop">
-  <link rel="canonical" href="https://shopchangingplaces.com">
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Changing Places Consignment Shop" />
+    <meta
+      property="og:description"
+      content="Curated secondhand treasures for every home style."
+    />
+    <meta
+      property="og:image"
+      content="https://connorcr37.github.io/changing-places-site/images/logo.png"
+    />
+    <!-- Absolute URLs, not relative paths.  -->
 
-  <!-- Open Graph Meta -->
-  <meta property="og:title" content="Changing Places Consignment Shop">
-  <meta property="og:description" content="Curated secondhand treasures for every home style.">
-  <meta property="og:image" content="https://connorcr37.github.io/changing-places-site/images/logo.png">
-  <!-- Absolute URLs, not relative paths.  -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shopchangingplaces.com" />
+    <meta property="og:site_name" content="Changing Places Consignment Shop" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://shopchangingplaces.com">
-  <meta property="og:site_name" content="Changing Places Consignment Shop">
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Changing Places Consignment Shop" />
+    <meta
+      name="twitter:description"
+      content="Curated secondhand treasures for every home style."
+    />
+    <meta
+      name="twitter:image"
+      content="https://connorcr37.github.io/changing-places-site/images/logo.png"
+    />
+    <!-- Absolute URLs, not relative paths.  -->
 
-  <!-- Twitter Meta -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Changing Places Consignment Shop">
-  <meta name="twitter:description" content="Curated secondhand treasures for every home style.">
-  <meta name="twitter:image" content="https://connorcr37.github.io/changing-places-site/images/logo.png">
-  <!-- Absolute URLs, not relative paths.  -->
-
-  <!-- Structured Data: Local Business -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FurnitureStore",
-      "name": "Changing Places",
-      "image": "https://shopchangingplaces.com/images/logo.png",
-      "url": "https://shopchangingplaces.com",
-      "telephone": "+1-515-727-2117",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "3250 100th St",
-        "addressLocality": "Urbandale",
-        "addressRegion": "IA",
-        "postalCode": "50322",
-        "addressCountry": "US"
-      },
-      "openingHours": "Mo-Fr 10:00-18:00, Sa 10:00-17:00",
-      "description": "Changing Places is a trusted consignment store offering curated, gently used furniture and home decor in Urbandale, IA.",
-      "sameAs": [
-        "https://www.facebook.com/ChangingPlacesDSM",
-        "https://www.instagram.com/ChangingPlacesDSM"
-      ]
-    }
-  </script>
-
-  <!-- Structured Data: Customer Reviews -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Phil R."
-          },
-          "datePublished": "2024-06-15",
-          "reviewBody": "No doubt the best consignment store in Des Moines.. well-managed with a friendly atmosphere.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "itemReviewed": {
-            "@type": "FurnitureStore",
-            "name": "Changing Places"
-          }
+    <!-- Structured Data: Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FurnitureStore",
+        "name": "Changing Places",
+        "image": "https://shopchangingplaces.com/images/logo.png",
+        "url": "https://shopchangingplaces.com",
+        "telephone": "+1-515-727-2117",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3250 100th St",
+          "addressLocality": "Urbandale",
+          "addressRegion": "IA",
+          "postalCode": "50322",
+          "addressCountry": "US"
         },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Jennifer B."
-          },
-          "datePublished": "2024-07-02",
-          "reviewBody": "These folks went WAY above and beyond to serve me! The store is very clean and beautiful.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "itemReviewed": {
-            "@type": "FurnitureStore",
-            "name": "Changing Places"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Jack R."
-          },
-          "datePublished": "2024-08-10",
-          "reviewBody": "Great store! High-end furniture brands at really good prices. You won't find a better deal anywhere in the Des Moines area.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "itemReviewed": {
-            "@type": "FurnitureStore",
-            "name": "Changing Places"
-          }
-        }
-      ]
-    }
-  </script>
+        "openingHours": "Mo-Fr 10:00-18:00, Sa 10:00-17:00",
+        "description": "Changing Places is a trusted consignment store offering curated, gently used furniture and home decor in Urbandale, IA.",
+        "sameAs": [
+          "https://www.facebook.com/ChangingPlacesDSM",
+          "https://www.instagram.com/ChangingPlacesDSM"
+        ]
+      }
+    </script>
 
-  <!-- Title, Fonts, Styles, and Favicon (favicon.io) -->
-  <title>Changing Places Consignment Shop</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/images/favicon/site.webmanifest">
-</head>
+    <!-- Structured Data: Customer Reviews -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Phil R."
+            },
+            "datePublished": "2024-06-15",
+            "reviewBody": "No doubt the best consignment store in Des Moines.. well-managed with a friendly atmosphere.",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "itemReviewed": {
+              "@type": "FurnitureStore",
+              "name": "Changing Places"
+            }
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Jennifer B."
+            },
+            "datePublished": "2024-07-02",
+            "reviewBody": "These folks went WAY above and beyond to serve me! The store is very clean and beautiful.",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "itemReviewed": {
+              "@type": "FurnitureStore",
+              "name": "Changing Places"
+            }
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Jack R."
+            },
+            "datePublished": "2024-08-10",
+            "reviewBody": "Great store! High-end furniture brands at really good prices. You won't find a better deal anywhere in the Des Moines area.",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "itemReviewed": {
+              "@type": "FurnitureStore",
+              "name": "Changing Places"
+            }
+          }
+        ]
+      }
+    </script>
 
-<body>
-  <header>
-    <div class="container header-flex">
-      <a href="#home" aria-label="Go to top"><img src="images/logo.png" alt="Changing Places Logo" class="logo-img"
-          loading="lazy"></a>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
-      <nav id="mobile-menu">
-        <!-- Menu Links: 5 items is a sweet spot for mobile and desktop readability. Testimonials and FAQs are just supportive content. 
+    <!-- Title, Fonts, Styles, and Favicon (favicon.io) -->
+    <title>Changing Places Consignment Shop</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container header-flex">
+        <a href="#home" aria-label="Go to top"
+          ><img
+            src="images/logo.png"
+            alt="Changing Places Consignment Shop logo"
+            class="logo-img"
+            loading="lazy"
+        /></a>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle Menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          ☰
+        </button>
+        <nav id="mobile-menu" aria-label="Primary">
+          <!-- Menu Links: 5 items is a sweet spot for mobile and desktop readability. Testimonials and FAQs are just supportive content.
          Current menu leads people through a journey: discover (Gallery), get involved (Consign), learn (About), and reach out (Contact). -->
+          <ul id="primary-navigation">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#consign">Consign</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a
+                href="https://changingplaces.consignoraccess.com/login"
+                class="button"
+                >Consignor Login</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container">
+          <h2>Where Preloved Becomes Beloved</h2>
+          <p>Carefully curated secondhand treasures for every home style.</p>
+        </div>
+      </section>
+
+      <!-- LightWidget Instagram Feed -->
+      <section id="gallery" class="preview">
+        <div class="container">
+          <h3>Recent Highlights</h3>
+          <!-- ⚠️ The console warning about defineLocale being deprecated comes from this embed using momnet.js under the hood. Nothing for you to address unless it breaks. ⚠️ -->
+          <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+          <iframe
+            src="//lightwidget.com/widgets/acaddb40c65e5f9a9041ed6dc27938c6.html"
+            scrolling="no"
+            allowtransparency="true"
+            class="lightwidget-widget"
+            style="width: 100%; border: 0; overflow: hidden"
+            loading="lazy"
+          >
+          </iframe>
+          <p class="note note--compact">
+            Items shown may no longer be available. Visit us in-store for the
+            latest finds!
+          </p>
+        </div>
+      </section>
+
+      <!-- Consignment Info: How to Submit, Terms and Payment, Pickup Options, & Call-to-Actions -->
+      <section id="consign" class="consign">
+        <div class="container">
+          <h3>Consign With Us!</h3>
+          <h4>Getting Started</h4>
+          <p>
+            Thinking about consigning? It's easy! Text photos of your gently
+            used furniture or home decor to
+            <a href="sms:5157778992" class="portal-link">515-777-8992</a>, email
+            us at
+            <a href="mailto:contact@shopchangingplaces.com" class="portal-link"
+              >contact@shopchangingplaces.com</a
+            >, or use the form below. We'll review your items, let you know what
+            we can accept, and schedule a drop-off during store hours. Please
+            make sure all items are clean, in good condition, free of stains,
+            pet hair, and damage, and come from smoke-free environments.
+          </p>
+
+          <h4>Terms & Payouts</h4>
+          <p>
+            Consigned items are displayed in our store for up to four months.
+            For items priced over $60, we apply a 15% discount every 30 days to
+            help them sell (fun fact: 90% of our inventory sells in the first 30
+            days!). If your items haven't sold by the end of the four months,
+            you can choose to restart the consignment period or arrange for
+            pickup. If we don't hear from you, the items will be transferred to
+            a store account and may be further discounted or donated.
+          </p>
+          <p>
+            You'll receive 45% of the final sale price. Payouts are issued on
+            the 5th of the month following the sale. Payments under $100 are
+            made in cash; payments over $100 are paid by check.
+          </p>
+
+          <h4>Pickup & Delivery</h4>
+          <p>
+            Need help moving items? We're happy to recommend a trusted
+            full-service mover for a seamless experience.
+          </p>
+          <p class="stacked-paragraph">
+            If you're looking for a more budget-friendly option, we also offer
+            store-arranged garage or curbside pickup and delivery on Wednesdays
+            between 10 AM and 2 PM for a flat fee of $100 (within a 20-mile
+            radius). This service is available for both consignors and buyers.
+            Please note: our team is only able to pick up or drop off items that
+            are ready and accessible in a garage or driveway. For insurance
+            reasons, we're unable to enter homes or assist with moving items
+            inside.
+          </p>
+
+          <p class="portal-note">
+            ✅ <strong>Ready to consign?</strong>
+            <a href="form.html" class="portal-link">Start here</a> to tell us
+            about your items.
+          </p>
+
+          <p class="portal-note">
+            ✅ <strong>Already consigning?</strong>
+            <a
+              href="https://changingplaces.consignoraccess.com/login"
+              class="portal-link"
+            >
+              Log in to your portal
+            </a>
+            to track your items and payouts.
+          </p>
+        </div>
+      </section>
+
+      <!-- About: Store Story & Team Grid -->
+      <section id="about" class="about">
+        <div class="container">
+          <h3>About Changing Places</h3>
+          <p>
+            Since opening in September 2008, Changing Places has been a trusted
+            part of the Des Moines community—helping people buy and sell quality
+            home furnishings with personality and purpose. Originally founded by
+            Bill and Terrill Johnson, the shop later passed to Steph Martin, and
+            is now passionately run by Jen Denham.
+          </p>
+          <p>
+            What hasn't changed? A love for design, a commitment to
+            sustainability, and the belief that every piece deserves a second
+            story. Whether you're furnishing a new space, refreshing a room, or
+            letting go of something you've loved, we make the process simple,
+            stylish, and satisfying.
+          </p>
+          <p>
+            From vintage treasures to modern staples, our ever-changing
+            inventory is handpicked for quality and charm. Come discover
+            something special—or let us help you pass it on.
+          </p>
+
+          <div class="team-grid">
+            <div class="team-member">
+              <img
+                src="images/employee-portrait-1.png"
+                alt="Portrait of Jen Denham smiling while wearing a black shirt"
+                class="team-photo"
+                loading="lazy"
+              />
+              <p><strong>Jen</strong><br />Chief Everything Officer</p>
+            </div>
+            <div class="team-member">
+              <img
+                src="images/employee-portrait-2.png"
+                alt="Portrait of Brian wearing glasses and a blue shirt"
+                class="team-photo"
+                loading="lazy"
+              />
+              <p><strong>Brian</strong><br />Moral Support</p>
+            </div>
+            <div class="team-member">
+              <img
+                src="images/employee-portrait-2.png"
+                alt="Portrait of Steve smiling in a blue button-down shirt"
+                class="team-photo"
+                loading="lazy"
+              />
+              <p><strong>Steve</strong><br />Curator of the Curious</p>
+            </div>
+            <div class="team-member">
+              <img
+                src="images/employee-portrait-1.png"
+                alt="Portrait of Sandy laughing in a black blouse"
+                class="team-photo"
+                loading="lazy"
+              />
+              <p><strong>Sandy</strong><br />Store Mom</p>
+            </div>
+            <div class="team-member">
+              <img
+                src="images/employee-portrait-2.png"
+                alt="Portrait of Corey wearing glasses and smiling"
+                class="team-photo"
+                loading="lazy"
+              />
+              <p>
+                <strong>Corey</strong><br />
+                Male Model / Tech Support
+              </p>
+            </div>
+            <div class="team-member">
+              <img
+                src="images/employee-portrait-2.png"
+                alt="Portrait of Sean in a blue shirt with folded arms"
+                class="team-photo"
+                loading="lazy"
+              />
+              <p><strong>Sean</strong><br />Structural Integrity Consultant</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="testimonials">
+        <div class="container">
+          <h3>What Our Customers Say</h3>
+          <blockquote>
+            “No doubt the best consignment store in Des Moines.. well-managed
+            with a friendly atmosphere. Beautiful, gently used furniture and
+            unique pieces for your home.” — <strong>Phil R.</strong>
+          </blockquote>
+          <blockquote>
+            “These folks went WAY above and beyond to serve me! The store is
+            very clean and beautiful. I would highly recommend checking them out
+            before purchasing new.” — <strong>Jennifer B.</strong>
+          </blockquote>
+          <blockquote>
+            “Great store! High-end furniture brands at really good prices. You
+            won't find a better deal anywhere in the Des Moines area. The staff
+            and sales associates go to great lengths to ensure you're satisfied.
+            You can also consign your high-quality furniture there — it usually
+            sells quickly!” — <strong>Jack R.</strong>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="faq">
+        <div class="container">
+          <h3>Frequently Asked Questions</h3>
+          <div class="faq-item">
+            <button class="faq-question">
+              What types of items do you accept?
+            </button>
+            <div class="faq-answer">
+              <p>
+                We accept furniture, rugs, mirrors, wall art, and home decor. At
+                the moment, we aren't taking armoires due to low demand.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you accept walk-in consignments?
+            </button>
+            <div class="faq-answer">
+              <p>
+                To help keep things running smoothly, we ask that you send
+                photos first. We often have other consignors already scheduled,
+                and we can only accommodate a certain number of items each day -
+                sending photos ahead lets us plan accordingly and saves you a
+                trip!
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How much will you list my item for?
+            </button>
+            <div class="faq-answer">
+              <p>
+                We base pricing on a mix of factors - brand, condition, style,
+                and current trends. Since condition plays such a big role, we
+                only price items after seeing them in person.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How do I get paid?</button>
+            <div class="faq-answer">
+              <p>
+                Payouts are processed on the 5th of the month after your item
+                sells. Payments under $100 are made in cash, and anything over
+                $100 is paid by check. All payouts are picked up in-store - just
+                swing by when it's convenient!
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you offer pickup outside the 20-mile radius?
+            </button>
+            <div class="faq-answer">
+              <p>
+                We do! If you're located further out, we're happy to recommend a
+                trusted third-party mover. Just let us know and we'll point you
+                in the right direction.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              I'm looking for a specific item. Can you let me know when one
+              comes in?
+            </button>
+            <div class="faq-answer">
+              <p>
+                With over 6,000 consignors and about 100 new items arriving
+                every day, our inventory moves incredibly fast — it's just not
+                something we're able to track or give updates on individually.
+                We totally understand the treasure hunt though! The best way to
+                stay in the loop is by following us on
+                <a
+                  href="https://www.facebook.com/ChangingPlacesDSM"
+                  class="portal-link"
+                  target="_blank"
+                  >Facebook</a
+                >
+                and
+                <a
+                  href="https://www.instagram.com/ChangingPlacesDSM"
+                  class="portal-link"
+                  target="_blank"
+                  >Instagram</a
+                >
+                - we share lots of new arrivals there.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Map -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <h3>Check Us Out!</h3>
+          <p>3250 100th St, Urbandale, IA 50322</p>
+          <p>Mon–Fri: 10-6 | Sat: 10-5 | Sun: Closed</p>
+          <p>
+            <a href="mailto:contact@shopchangingplaces.com"
+              >contact@shopchangingplaces.com</a
+            >
+            | 515-727-2117
+          </p>
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps?q=3250+100th+St,+Urbandale,+IA+50322&output=embed"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              title="Map showing the location of Changing Places Consignment Shop"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2025 Changing Places Consignment Shop. All rights reserved.
+        </p>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#consign">Consign</a></li>
-          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="https://changingplaces.consignoraccess.com/login" class="button">Consignor Login</a></li>
+          <li>
+            <a
+              href="https://www.facebook.com/ChangingPlacesDSM"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="#2b2b2b"
+                viewBox="0 0 24 24"
+                style="vertical-align: middle; margin-right: 0.25rem"
+              >
+                <path
+                  d="M22 12a10 10 0 1 0-11.5 9.87v-6.99h-2.2v-2.88h2.2V9.83c0-2.18 1.3-3.39 3.3-3.39.96 0 1.97.17 1.97.17v2.17h-1.11c-1.1 0-1.44.68-1.44 1.38v1.66h2.46l-.39 2.88h-2.07v6.99A10 10 0 0 0 22 12Z"
+                />
+              </svg>
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/ChangingPlacesDSM"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="#2b2b2b"
+                viewBox="0 0 24 24"
+                style="vertical-align: middle; margin-right: 0.25rem"
+              >
+                <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5Zm4.88-.38a.88.88 0 1 1 1.75 0a.88.88 0 0 1-1.75 0Z"
+                />
+              </svg>
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://changingplaces.consignoraccess.com/login"
+              target="_blank"
+              rel="noopener"
+              aria-label="Consignor Portal"
+            >
+              <img
+                src="images/simpleconsign-logo.png"
+                alt="SimpleConsign Logo"
+                class="footer-icon"
+              />
+              Consignor Portal
+            </a>
+          </li>
         </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="container">
-        <h2>Where Preloved Becomes Beloved</h2>
-        <p>Carefully curated secondhand treasures for every home style.</p>
       </div>
-    </section>
+    </footer>
 
-    <!-- LightWidget Instagram Feed -->
-    <section id="gallery" class="preview">
-      <div class="container">
-        <h3>Recent Highlights</h3>
-        <!-- ⚠️ The console warning about defineLocale being deprecated comes from this embed using momnet.js under the hood. Nothing for you to address unless it breaks. ⚠️ -->
-        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-        <iframe src="//lightwidget.com/widgets/acaddb40c65e5f9a9041ed6dc27938c6.html" scrolling="no"
-          allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"
-          loading="lazy">
-        </iframe>
-        <p class="note" style="margin-top: -0.5rem" ;>Items shown may no longer be available. Visit us in-store for the
-          latest finds!</p>
-      </div>
-    </section>
+    <script>
+      // Mobile Menu Toggle
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("primary-navigation");
 
-    <!-- Consignment Info: How to Submit, Terms and Payment, Pickup Options, & Call-to-Actions -->
-    <section id="consign" class="consign">
-      <div class="container">
-        <h3>Consign With Us!</h3>
-        <h4>Getting Started</h4>
-        <p> Thinking about consigning? It's easy! Text photos of your gently used furniture or home decor to <a
-            href="sms:5157778992" class="portal-link">515-777-8992</a>, email us at <a
-            href="mailto:jen@shopchangingplaces.com" class="portal-link">jen@shopchangingplaces.com</a>, or
-          use the form below. We'll review your items, let you know what we can accept, and schedule a drop-off during
-          store hours. Please make sure all items are clean, in good condition, free of stains, pet hair, and damage,
-          and come from smoke-free environments.</p>
+      if (toggle && menu) {
+        const closeMenu = () => {
+          menu.classList.remove("show");
+          toggle.setAttribute("aria-expanded", "false");
+        };
 
-        <h4>Terms & Payouts</h4>
-        <p>Consigned items are displayed in our store for up to four months. For items priced over $60, we apply a 15%
-          discount
-          every 30 days to help them sell (fun fact: 90% of our inventory sells in the first 30 days!). If your items
-          haven't sold by the end of the four months, you can choose to restart the
-          consignment period or arrange for pickup. If we don't hear from you, the items will be transferred to a store
-          account and
-          may be further discounted or donated.</p>
-        <p>You'll receive 45% of the final sale price. Payouts are issued on the 5th of the month following the sale.
-          Payments under $100 are made in cash; payments over $100 are paid by check.</p>
+        toggle.addEventListener("click", () => {
+          const isOpen = menu.classList.toggle("show");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
 
-        <h4>Pickup & Delivery</h4>
-        <p>Need help moving items? We're happy to recommend a trusted full-service mover for a seamless experience.</p>
-        <p style="margin-bottom: 1.5rem;">If you're looking for a more budget-friendly option, we also offer
-          store-arranged garage or curbside pickup
-          and delivery on Wednesdays between 10 AM and 2 PM for a flat fee of $100 (within a 20-mile radius). This
-          service is available for both consignors and buyers. Please note: our team is only able to pick up or drop off
-          items that are ready and accessible in a garage or driveway. For insurance reasons, we're unable to enter
-          homes or assist with moving items inside.</p>
+        menu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (menu.classList.contains("show")) {
+              closeMenu();
+            }
+          });
+        });
 
-        <p class="portal-note">✅ <strong>Ready to consign?</strong>
-          <a href="form.html" class="portal-link">Start here</a> to tell us about your items.
-        </p>
-
-        <p class="portal-note">✅ <strong>Already consigning?</strong>
-          <a href="https://changingplaces.consignoraccess.com/login" class="portal-link">
-            Log in to your portal
-          </a> to track your items and payouts.
-        </p>
-      </div>
-    </section>
-
-    <!-- About: Store Story & Team Grid -->
-    <section id="about" class="about">
-      <div class="container">
-        <h3>About Changing Places</h3>
-        <p>Since opening in September 2008, Changing Places has been a trusted part of the Des Moines community—helping
-          people buy and sell quality home furnishings with personality and purpose. Originally founded by Bill and
-          Terrill Johnson, the shop later passed to Steph Martin, and is now passionately run by Jen Denham.</p>
-        <p>What hasn't changed? A love for design, a commitment to sustainability, and the belief that every piece
-          deserves a second story. Whether you're furnishing a new space, refreshing a room, or letting go of something
-          you've loved, we make the process simple, stylish, and satisfying.</p>
-        <p>From vintage treasures to modern staples, our ever-changing inventory is handpicked for quality and charm.
-          Come discover something special—or let us help you pass it on.</p>
-
-        <div class="team-grid">
-          <div class="team-member">
-            <img src="images/employee-portrait-1.png" alt="Jen" class="team-photo" loading="lazy">
-            <p><strong>Jen</strong><br>Chief Everything Officer</p>
-          </div>
-          <div class="team-member">
-            <img src="images/employee-portrait-2.png" alt="Brian" class="team-photo" loading="lazy">
-            <p><strong>Brian</strong><br>Moral Support</p>
-          </div>
-          <div class="team-member">
-            <img src="images/employee-portrait-2.png" alt="Steve" class="team-photo" loading="lazy">
-            <p><strong>Steve</strong><br>Curator of the Curious</p>
-          </div>
-          <div class="team-member">
-            <img src="images/employee-portrait-1.png" alt="Sandy" class="team-photo" loading="lazy">
-            <p><strong>Sandy</strong><br>Store Mom</p>
-          </div>
-          <div class="team-member">
-            <img src="images/employee-portrait-2.png" alt="Corey" class="team-photo" loading="lazy">
-            <p><strong>Corey</strong><br> Male Model / Tech Support</p>
-          </div>
-          <div class="team-member">
-            <img src="images/employee-portrait-2.png" alt="Sean" class="team-photo" loading="lazy">
-            <p><strong>Sean</strong><br>Structural Integrity Consultant</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-        <h3>What Our Customers Say</h3>
-        <blockquote>
-          “No doubt the best consignment store in Des Moines.. well-managed with a friendly atmosphere. Beautiful,
-          gently used furniture and unique pieces for your home.” — <strong>Phil R.</strong>
-        </blockquote>
-        <blockquote>
-          “These folks went WAY above and beyond to serve me! The store is very clean and beautiful. I would highly
-          recommend checking them out before purchasing new.” — <strong>Jennifer B.</strong>
-        </blockquote>
-        <blockquote>
-          “Great store! High-end furniture brands at really good prices. You won't find a better deal anywhere in the
-          Des Moines area. The staff and sales associates go to great lengths to ensure you're satisfied. You can also
-          consign your high-quality furniture there — it usually sells quickly!” — <strong>Jack R.</strong>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="faq">
-      <div class="container">
-        <h3>Frequently Asked Questions</h3>
-        <div class="faq-item">
-          <button class="faq-question">What types of items do you accept?</button>
-          <div class="faq-answer">
-            <p>We accept furniture, rugs, mirrors, wall art, and home decor. At the moment, we aren't taking armoires
-              due to
-              low demand.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Do you accept walk-in consignments?</button>
-          <div class="faq-answer">
-            <p>To help keep things running smoothly, we ask that you send photos first. We often have other consignors
-              already scheduled, and we can only accommodate a certain number of items each day - sending photos ahead
-              lets
-              us plan accordingly and saves you a trip!</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">How much will you list my item for?</button>
-          <div class="faq-answer">
-            <p>We base pricing on a mix of factors - brand, condition, style, and current trends. Since condition plays
-              such
-              a big role, we only price items after seeing them in person.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">How do I get paid?</button>
-          <div class="faq-answer">
-            <p>Payouts are processed on the 5th of the month after your item sells. Payments under $100 are made in
-              cash,
-              and anything over $100 is paid by check. All payouts are picked up in-store - just swing by when it's
-              convenient!</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Do you offer pickup outside the 20-mile radius?</button>
-          <div class="faq-answer">
-            <p>We do! If you're located further out, we're happy to recommend a trusted third-party mover. Just let us
-              know
-              and we'll point you in the right direction.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">I'm looking for a specific item. Can you let me know when one comes in?</button>
-          <div class="faq-answer">
-            <p>With over 6,000 consignors and about 100 new items arriving every day, our inventory moves incredibly
-              fast —
-              it's just not something we're able to track or give updates on individually. We totally understand the
-              treasure hunt though! The best way to stay in the loop is by following us on <a
-                href="https://www.facebook.com/ChangingPlacesDSM" class="portal-link" target="_blank">Facebook</a> and
-              <a href="https://www.instagram.com/ChangingPlacesDSM" class="portal-link" target="_blank">Instagram</a> -
-              we share lots of new arrivals there.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Map -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h3>Check Us Out!</h3>
-        <p>3250 100th St, Urbandale, IA 50322</p>
-        <p>Mon–Fri: 10-6 | Sat: 10-5 | Sun: Closed</p>
-        <p><a href="mailto:jen@shopchangingplaces.com">jen@shopchangingplaces.com</a> | 515-727-2117</p>
-        <div class="map">
-          <iframe src="https://www.google.com/maps?q=3250+100th+St,+Urbandale,+IA+50322&output=embed" width="100%"
-            height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Changing Places Consignment Shop. All rights reserved.</p>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <a href="https://www.facebook.com/ChangingPlacesDSM" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#2b2b2b" viewBox="0 0 24 24"
-              style="vertical-align: middle; margin-right: 0.25rem;">
-              <path
-                d="M22 12a10 10 0 1 0-11.5 9.87v-6.99h-2.2v-2.88h2.2V9.83c0-2.18 1.3-3.39 3.3-3.39.96 0 1.97.17 1.97.17v2.17h-1.11c-1.1 0-1.44.68-1.44 1.38v1.66h2.46l-.39 2.88h-2.07v6.99A10 10 0 0 0 22 12Z" />
-            </svg>
-            Facebook
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/ChangingPlacesDSM" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#2b2b2b" viewBox="0 0 24 24"
-              style="vertical-align: middle; margin-right: 0.25rem;">
-              <path
-                d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5Zm4.88-.38a.88.88 0 1 1 1.75 0a.88.88 0 0 1-1.75 0Z" />
-            </svg>
-            Instagram
-          </a>
-        </li>
-        <li>
-          <a href="https://changingplaces.consignoraccess.com/login" target="_blank" rel="noopener"
-            aria-label="Consignor Portal">
-            <img src="images/simpleconsign-logo.png" alt="SimpleConsign Logo" class="footer-icon">
-            Consignor Portal
-          </a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile Menu Toggle
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.querySelector('#mobile-menu ul');
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-
-    // Close the mobile menu when a link is clicked
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (menu.classList.contains('show')) {
-          menu.classList.remove('show');
-        }
-      });
-    });
-
-    // Scroll-Based Navigation Highlight
-    const sections = document.querySelectorAll('main section, section');
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      // If user is at the bottom of the page, override current to 'contact'
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
-        current = 'contact';
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768 && menu.classList.contains("show")) {
+            closeMenu();
+          }
+        });
       }
 
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
+      // Scroll-Based Navigation Highlight
+      const sections = document.querySelectorAll("main section[id]");
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+      const highlightOnScroll = () => {
+        if (!sections.length || !navLinks.length) return;
+
+        let current = sections[0].id;
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 120;
+          if (window.scrollY >= sectionTop) {
+            current = section.id;
+          }
+        });
+
+        if (
+          window.innerHeight + window.scrollY >=
+          document.body.offsetHeight - 10
+        ) {
+          current = "contact";
         }
+
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${current}`;
+          link.classList.toggle("active", isActive);
+        });
+      };
+
+      window.addEventListener("scroll", highlightOnScroll);
+      window.addEventListener("load", highlightOnScroll);
+      highlightOnScroll();
+
+      // FAQ Accordion Toggle
+      document.querySelectorAll(".faq-question").forEach((button) => {
+        button.addEventListener("click", () => {
+          button.classList.toggle("active");
+          const answer = button.nextElementSibling;
+          answer.style.display =
+            answer.style.display === "block" ? "none" : "block";
+        });
       });
-    });
 
-    // FAQ Accordion Toggle
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('active');
-        const answer = button.nextElementSibling;
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-      });
-    });
+      // Logo Scroll Animation
+      const logo = document.querySelector(".logo-img");
 
-    // Logo Scroll Animation
-    const logo = document.querySelector('.logo-img');
+      if (logo) {
+        const handleLogoScroll = () => {
+          if (window.innerWidth > 768) {
+            if (window.scrollY > 80) {
+              logo.classList.add("logo-scrolled");
+            } else {
+              logo.classList.remove("logo-scrolled");
+            }
+          } else {
+            logo.classList.remove("logo-scrolled");
+          }
+        };
 
-    function handleLogoScroll() {
-      // Only apply scroll behavior on screens wider than 768px
-      if (window.innerWidth > 768) {
-        if (window.scrollY > 80) {
-          logo.classList.add('logo-scrolled');
-        } else {
-          logo.classList.remove('logo-scrolled');
-        }
-      } else {
-        // Ensure it's in its default mobile state
-        logo.classList.remove('logo-scrolled');
+        window.addEventListener("scroll", handleLogoScroll);
+        window.addEventListener("resize", handleLogoScroll);
+        window.addEventListener("load", handleLogoScroll);
       }
-    }
-
-    window.addEventListener('scroll', handleLogoScroll);
-    window.addEventListener('resize', handleLogoScroll); // update on resize too
-    window.addEventListener('load', handleLogoScroll); // make sure it’s right on page load
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

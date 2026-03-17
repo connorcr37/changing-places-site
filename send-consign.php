@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 // Configuration
-$recipientEmail = 'jen@shopchangingplaces.com';
+$recipientEmail = 'ChangingPlacesDSM@gmail.com';
 $recipientName = 'Changing Places Consignment';
 $fromEmail = 'no-reply@shopchangingplaces.com';
 $maxFiles = 5;

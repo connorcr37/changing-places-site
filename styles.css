@@ -309,6 +309,17 @@ form button:disabled {
   min-height: 1.5rem;
 }
 
+.file-summary {
+  margin-top: -0.5rem;
+  font-size: 0.95rem;
+  color: #4b4b4b;
+  min-height: 1.5rem;
+}
+
+.file-summary--error {
+  color: #a32121;
+}
+
 .form-status--success {
   color: #1b6b46;
 }

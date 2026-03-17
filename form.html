@@ -136,9 +136,19 @@
               type="file"
               id="photos"
               name="photos[]"
-              accept="image/*"
+              accept=".jpg,.jpeg,.png,.heic,image/jpeg,image/png,image/heic,image/heif"
               multiple
             />
+            <p class="note">
+              Upload up to 20 photos. Supported formats: JPG, JPEG, PNG, and
+              HEIC. Each file must be 10 MB or smaller.
+            </p>
+            <p
+              class="file-summary"
+              data-file-summary
+              aria-live="polite"
+              role="status"
+            ></p>
 
             <label>
               <input type="checkbox" name="agreement" required />
@@ -269,12 +279,59 @@
 
       if (consignForm && formStatus) {
         const hasFetchSupport = typeof window.fetch === "function";
+        const photosInput = consignForm.querySelector("#photos");
+        const fileSummary = consignForm.querySelector("[data-file-summary]");
+        const maxFiles = 20;
+        const maxFileSize = 10 * 1024 * 1024;
+        const maxTotalSize = 200 * 1024 * 1024;
 
         if (!hasFetchSupport) {
           return;
         }
 
         const submitButton = consignForm.querySelector('button[type="submit"]');
+        const formatBytes = (bytes) => {
+          if (bytes < 1024 * 1024) {
+            return `${(bytes / 1024).toFixed(1)} KB`;
+          }
+
+          return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+        };
+
+        const updateFileSummary = () => {
+          if (!photosInput || !fileSummary) {
+            return;
+          }
+
+          const files = Array.from(photosInput.files || []);
+
+          if (!files.length) {
+            fileSummary.textContent = "No photos selected yet.";
+            fileSummary.classList.remove("file-summary--error");
+            return;
+          }
+
+          const totalSize = files.reduce((sum, file) => sum + file.size, 0);
+          const hasTooManyFiles = files.length > maxFiles;
+          const hasOversizedFile = files.some((file) => file.size > maxFileSize);
+          const hasTooMuchTotal = totalSize > maxTotalSize;
+
+          fileSummary.textContent =
+            `${files.length} photo${files.length === 1 ? "" : "s"} selected` +
+            ` (${formatBytes(totalSize)} total).`;
+
+          if (hasTooManyFiles || hasOversizedFile || hasTooMuchTotal) {
+            fileSummary.textContent +=
+              " This selection is over the upload limit.";
+            fileSummary.classList.add("file-summary--error");
+            return;
+          }
+
+          fileSummary.classList.remove("file-summary--error");
+        };
+
+        updateFileSummary();
+        photosInput?.addEventListener("change", updateFileSummary);
 
         consignForm.addEventListener("submit", async (event) => {
           event.preventDefault();
@@ -312,6 +369,7 @@
             }
 
             consignForm.reset();
+            updateFileSummary();
             formStatus.textContent =
               (data && data.message) ||
               "Thanks! We have your details and will be in touch soon.";

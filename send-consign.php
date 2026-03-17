@@ -7,10 +7,16 @@ declare(strict_types=1);
 $recipientEmail = 'ChangingPlacesDSM@gmail.com';
 $recipientName = 'Changing Places Consignment';
 $fromEmail = 'no-reply@shopchangingplaces.com';
-$maxFiles = 5;
-$maxFileSize = 5 * 1024 * 1024; // 5 MB per file
-$maxTotalSize = 20 * 1024 * 1024; // 20 MB combined
-$allowedMimePrefixes = ['image/'];
+$maxFiles = 20;
+$maxFileSize = 10 * 1024 * 1024; // 10 MB per file
+$maxTotalSize = 200 * 1024 * 1024; // 200 MB combined
+$allowedMimeTypes = [
+    'image/heic',
+    'image/heif',
+    'image/jpeg',
+    'image/jpg',
+    'image/png',
+];
 
 $expectsJson = isset($_SERVER['HTTP_ACCEPT']) && stripos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false;
 
@@ -126,24 +132,18 @@ if (!empty($_FILES['photos']) && is_array($_FILES['photos']['name'])) {
         }
 
         if ($size > $maxFileSize) {
-            respond(false, 'Each photo must be smaller than 5 MB.', 422, $expectsJson);
+            respond(false, 'Each photo must be 10 MB or smaller.', 422, $expectsJson);
         }
 
         $totalSize += $size;
         if ($totalSize > $maxTotalSize) {
-            respond(false, 'Please keep the combined photo size under 20 MB.', 422, $expectsJson);
+            respond(false, 'Please keep the combined photo size under 200 MB.', 422, $expectsJson);
         }
 
-        $isAllowedType = false;
-        foreach ($allowedMimePrefixes as $prefix) {
-            if (stripos($type, $prefix) === 0) {
-                $isAllowedType = true;
-                break;
-            }
-        }
+        $isAllowedType = in_array(strtolower($type), $allowedMimeTypes, true);
 
         if (!$isAllowedType) {
-            respond(false, 'Only image files may be uploaded.', 422, $expectsJson);
+            respond(false, 'Only JPG, JPEG, PNG, and HEIC image files may be uploaded.', 422, $expectsJson);
         }
 
         $safeName = preg_replace('/[^A-Za-z0-9._-]/', '_', (string)$originalName) ?: 'photo.jpg';
